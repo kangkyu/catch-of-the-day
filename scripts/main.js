@@ -81,12 +81,18 @@ var StorePicker = React.createClass({
 
 });
 
+var NotFound = React.createClass({
+  render : function() {
+    return <h1>Not Found!</h1>
+  }
+})
 
 // define Router by JSX
 var routes = (
   <Router history={createBrowserHistory()}>
     <Route path="/" component={StorePicker} />
     <Route path="/store/:storeId" component={App} />
+    <Route path="*" component={NotFound} />
   </Router>
 );
 
