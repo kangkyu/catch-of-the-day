@@ -5,7 +5,9 @@ var ReactRouter = require('react-router');
 var Router = ReactRouter.Router;
 var Route = ReactRouter.Route;
 var Navigation = ReactRouter.Navigation;
-var createBrowserHistory = require('history/lib/createBrowserHistory')
+var createBrowserHistory = require('history/lib/createBrowserHistory');
+
+var h = require('./helpers');
 
 /*
 <App />
@@ -42,7 +44,7 @@ var Header = React.createClass({
       </header>
     )
   }
-})
+});
 
 // <Order />
 var Order = React.createClass({
@@ -73,7 +75,7 @@ var StorePicker = React.createClass({
       <form className="store-selector">
         {/* creating a store  */}
         <h2>Please Enter a Store</h2>
-        <input type="text" ref="storeId" />
+        <input type="text" ref="storeId" defaultValue={h.getFunName()} />
         <input type="Submit" />
       </form>
     )
@@ -85,7 +87,7 @@ var NotFound = React.createClass({
   render : function() {
     return <h1>Not Found!</h1>
   }
-})
+});
 
 // define Router by JSX
 var routes = (
